@@ -19,7 +19,7 @@ async def start(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(row_width=2)
     # Добавление кнопок на клавиатуру
     buttons = ["Информация о стоимости доставки", "Как высчитать цену", "Как записаться", "Информация об учетах",
-               "Как производится оплата", "Нынешний курс учётов", "Контакт с менеджером"]
+               "Как производится оплата", "Нынешний курс учётов", "Не нашли ответ на свой вопрос"]
     # Добавление кнопок на клавиатуру
     for button in buttons:
         keyboard.add(button)
@@ -73,7 +73,7 @@ async def handle_button_click(message: types.Message):
         answer = "на данный момент учёты доставки до корейского адреса составляют 225 рублей."
         await message.answer(answer)
     # Обработка нажатия кнопки "Контакт с менеджером"
-    elif message.text == "Не нашли ответ на вопрос":
+    elif message.text == "Не нашли ответ на свой вопрос":
         answer = "Если вы не нашли ответ на свой вопрос, то свяжитесь с админками:\n @meijoooo ; @Omezjhka ; " \
                  "@beomgyullove"
         await message.answer(answer)
